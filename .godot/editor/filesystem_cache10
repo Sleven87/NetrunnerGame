@@ -1,0 +1,15 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1758116165
+icon.svg::CompressedTexture2D::3977722408636366225::1758103719::1758116166::1::::<><><>0<>0<>c6d1841608fc31f9abba34a7a272cd65<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+README.md::TextFile::-1::1758115927::0::1::::<><><>0<>0<><>::
+::res://Card Faces/::1758112649
+CardSlot.png::CompressedTexture2D::6384448400128311556::1758112646::1758116166::1::::<><><>0<>0<>9e728728821e77a879de78f1e55c33d8<>res://.godot/imported/CardSlot.png-cd8b698f38ed2d479a2e5b759b391260.ctex::
+self-modifying-code.png::CompressedTexture2D::3763782004663024237::1758103625::1758116166::1::::<><><>0<>0<>857e65a7d150fb16730bf4cee6ff0613<>res://.godot/imported/self-modifying-code.png-3c032a7b821bff03c01f98ee0eb6d853.ctex::
+::res://Scenes/::1758115552
+card.tscn::PackedScene::3393988999195874413::1758106987::0::1::::<><><>0<>0<><>::uid://btvg67k2q03n2::::res://Card Faces/self-modifying-code.png<>uid://brmcm0egp50f2::::res://Scripts/Card.gd
+Card_Game.tscn::PackedScene::3622737792117195014::1758112990::0::1::::<><><>0<>0<><>::uid://c6uq4jg3jcne4::::res://Scripts/card_manager.gd<>uid://bomcrdn5sbtsv::::res://Scenes/card.tscn<>uid://6da882druf4o::::res://Scenes/card_slot.tscn
+card_slot.tscn::PackedScene::2182107992380135628::1758115552::0::1::::<><><>0<>0<><>::uid://cw7w6x25kjpoe::::res://Card Faces/CardSlot.png<>uid://bekk2ccmgnvpf::::res://Scripts/card_slot.gd
+::res://Scripts/::1758114345
+Card.gd::GDScript::3604547741657597641::1758107333::0::1::::<>Node2D<><>0<>0<><>::
+card_manager.gd::GDScript::6991006818417197433::1758114345::0::1::::<>Node2D<><>0<>0<><>::
+card_slot.gd::GDScript::2688475330839013151::1758113705::0::1::::<>Node2D<><>0<>0<><>::
