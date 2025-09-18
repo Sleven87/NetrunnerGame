@@ -1,1 +1,7 @@
 res://Scenes/Card_Game.tscn
+res://Scripts/card_manager.gd
+res://Scenes/card.tscn
+res://Scenes/card_slot.tscn
+res://Scripts/player_hand.gd
+res://Scripts/Card.gd
+res://Scripts/card_slot.gd

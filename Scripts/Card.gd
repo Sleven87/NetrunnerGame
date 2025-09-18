@@ -3,6 +3,9 @@ extends Node2D
 signal hovered
 signal hovered_off
 
+var hand_position
+var starting_position: Vector2
+
 func _ready() -> void:
 	#all cards must be a child of cardmanager or this will error
 	get_parent().connect_card_signals(self)
