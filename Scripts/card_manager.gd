@@ -1,44 +1,35 @@
 extends Node2D
 
 
-const COLLISION_MASK_CARD = 1
-const COLLISION_MASK_CARD_SLOT = 2
-
-var screen_size
-var card_being_dragged
-var is_hovering_on_card
-var player_hand_reference
-
-func _ready() -> void:
-	screen_size = get_viewport_rect().size
-	player_hand_reference = $"../PlayerHand"
+const COLLISION_MASK_CARD = 1				#gives the cards a collision layer for raycasting
+const COLLISION_MASK_CARD_SLOT = 2			#gives the card slot a collision layer for raycasting
+const DEFAULT_CARD_MOVE_SPEED = 1
 
 
-func _process(_delta: float) -> void:
-	if card_being_dragged:
+var screen_size								#determines the screen size for location of card hand calculations below
+var card_being_dragged						#this checks if the player is holding left click on a card and holding it
+var is_hovering_on_card						#this determines whether the mouse is hovering on a card or not
+var player_hand_reference 					#this references the location of the players hand so that new cards know where to go
+
+func _ready() -> void:							#code runs on game launch
+	screen_size = get_viewport_rect().size		#reads the screen size from the system
+	player_hand_reference = $"../PlayerHand"	#references the scene file that is player hand for later use
+	$"../Input_Manager".connect("left_mouse_button_released", on_left_click_released)
+
+
+func _process(_delta: float) -> void:			#process code, runs on every frame but spreads the frames by delta
+	if card_being_dragged:						#function that is checking if there is a card being dragged, first by taking the  mouse position and then getting its global position from the system
 		var mouse_pos = get_global_mouse_position()
-		card_being_dragged.position = Vector2(clamp(mouse_pos.x, 0, screen_size.x), 
+		card_being_dragged.position = Vector2(clamp(mouse_pos.x, 0, screen_size.x), 		#using a vector 2 and calculating the mouse position this will clamp the cards inside the screen and will not let you drag them out of existence
 			clamp(mouse_pos.y, 0, screen_size.y))
 
 
-func _input(event):
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		if event.pressed:
-			var card = raycast_check_for_card()
-			if card:
-				start_drag(card)
-		else:
-			if card_being_dragged:
-				finish_drag()
-
-
-func start_drag(card):
-	card_being_dragged = card
-	card.scale = Vector2(1, 1)
-	var card_slot_found = raycast_check_for_card_slot()
-	if card_slot_found and card_slot_found.card_in_slot:
-		card_slot_found.card_in_slot = false
-		pass
+func start_drag(card):																	#function that determines what happens when a card is being dragged
+	card_being_dragged = card															#specifies that its the raycasted card from above
+	card.scale = Vector2(1, 1)															#scale the card on the x and y values (width and height, thats what Vector2 does) and change both values to 1. i.e resize the card to 1
+	var card_slot_found = raycast_check_for_card_slot()									#creates a variable based on successful raycast checking if there is a card slot under the mouse
+	if card_slot_found and card_slot_found.card_in_slot:								#uses the created variable and says, is there a card there?
+		card_slot_found.card_in_slot = false											#if the card that was picked up, came from a card slot, then re-activate that card slot
 
 
 
@@ -48,10 +39,10 @@ func finish_drag():
 	if card_slot_found and not card_slot_found.card_in_slot:
 		#card dropped in empty slot
 		card_being_dragged.position = card_slot_found.position
-		#card_being_dragged.get_node("Area2D/collisionShape2D").disabled = true				#need to figure out how to take the card out of the slot and make that slot usable again
+		#card_being_dragged.get_node("Area2D/collisionShape2D").disabled = true				#this will disable the ability to pick up the card if its dropped in a card slot, I have disabled this as I want to be able to move cards for now, I might change this, infact I probably will later.
 		card_slot_found.card_in_slot = true
 	else:
-		player_hand_reference.add_card_to_hand(card_being_dragged)
+		player_hand_reference.add_card_to_hand(card_being_dragged, DEFAULT_CARD_MOVE_SPEED)
 	card_being_dragged = null
 
 
@@ -59,6 +50,11 @@ func finish_drag():
 func connect_card_signals(card):
 	card.connect("hovered", on_hovered_over_card)
 	card.connect("hovered_off", on_hovered_off_card)
+
+
+func on_left_click_released():
+	if card_being_dragged:														#on the release of left click drop card
+		finish_drag()
 
 
 func on_hovered_over_card(card):

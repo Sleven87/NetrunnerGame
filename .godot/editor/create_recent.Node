@@ -1,4 +1,7 @@
-Node2D
-RigidBody2D
+RichTextLabel
 Area2D
+Node2D
+Sprite2D
+CollisionShape2D
+RigidBody2D
 GridContainer

@@ -5,3 +5,5 @@ res://Scenes/card_slot.tscn
 res://Scripts/player_hand.gd
 res://Scripts/Card.gd
 res://Scripts/card_slot.gd
+res://Scripts/deck.gd
+res://Scripts/Manager.gd
