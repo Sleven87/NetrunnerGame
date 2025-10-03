@@ -5,6 +5,7 @@ signal hovered_off
 
 var hand_position
 var starting_position: Vector2
+var card_slot_card_is_in
 
 func _ready() -> void:
 	#all cards must be a child of cardmanager or this will error

@@ -4,6 +4,7 @@ extends Node2D
 const COLLISION_MASK_CARD = 1				#gives the cards a collision layer for raycasting
 const COLLISION_MASK_CARD_SLOT = 2			#gives the card slot a collision layer for raycasting
 const DEFAULT_CARD_MOVE_SPEED = 1
+const DEFAULT_CARD_SCALE = 0.8
 
 
 var screen_size								#determines the screen size for location of card hand calculations below
@@ -26,7 +27,7 @@ func _process(_delta: float) -> void:			#process code, runs on every frame but s
 
 func start_drag(card):																	#function that determines what happens when a card is being dragged
 	card_being_dragged = card															#specifies that its the raycasted card from above
-	card.scale = Vector2(1, 1)															#scale the card on the x and y values (width and height, thats what Vector2 does) and change both values to 1. i.e resize the card to 1
+	card.scale = Vector2(DEFAULT_CARD_SCALE, DEFAULT_CARD_SCALE)															#scale the card on the x and y values (width and height, thats what Vector2 does) and change both values to 1. i.e resize the card to 1
 	var card_slot_found = raycast_check_for_card_slot()									#creates a variable based on successful raycast checking if there is a card slot under the mouse
 	if card_slot_found and card_slot_found.card_in_slot:								#uses the created variable and says, is there a card there?
 		card_slot_found.card_in_slot = false											#if the card that was picked up, came from a card slot, then re-activate that card slot
@@ -34,13 +35,16 @@ func start_drag(card):																	#function that determines what happens wh
 
 
 func finish_drag():
-	card_being_dragged.scale = Vector2(1.05, 1.05)
+	card_being_dragged.scale = Vector2(DEFAULT_CARD_SCALE*1.05, DEFAULT_CARD_SCALE*1.05)
 	var card_slot_found = raycast_check_for_card_slot()
 	if card_slot_found and not card_slot_found.card_in_slot:
 		#card dropped in empty slot
 		card_being_dragged.position = card_slot_found.position
 		#card_being_dragged.get_node("Area2D/collisionShape2D").disabled = true				#this will disable the ability to pick up the card if its dropped in a card slot, I have disabled this as I want to be able to move cards for now, I might change this, infact I probably will later.
 		card_slot_found.card_in_slot = true
+		
+		#remove the card from hand tracking
+		player_hand_reference.remove_card_from_hand(card_being_dragged)
 	else:
 		player_hand_reference.add_card_to_hand(card_being_dragged, DEFAULT_CARD_MOVE_SPEED)
 	card_being_dragged = null
@@ -75,10 +79,10 @@ func on_hovered_off_card(card):
 
 func highlight_card(card, hovered):
 	if hovered:
-		card.scale = Vector2(1.05, 1.05)
+		card.scale = Vector2(DEFAULT_CARD_SCALE*1.05, DEFAULT_CARD_SCALE*1.05)
 		card.z_index = 2
 	else:
-		card.scale = Vector2(1, 1)
+		card.scale = Vector2(DEFAULT_CARD_SCALE*1, DEFAULT_CARD_SCALE*1)
 		card.z_index = 1
 
 

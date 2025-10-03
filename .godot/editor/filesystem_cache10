@@ -1,18 +1,24 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1758157307
-icon.svg::CompressedTexture2D::3977722408636366225::1758103719::1758116166::1::::<><><>0<>0<>c6d1841608fc31f9abba34a7a272cd65<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-README.md::TextFile::-1::1758115927::0::1::::<><><>0<>0<><>::
-::res://Assets/::1758157293
-CardSlot.png::CompressedTexture2D::6384448400128311556::1758112646::1758157310::1::::<><><>0<>0<>1d276d4d07883817fb53537a7701da2b<>res://.godot/imported/CardSlot.png-e9d43e4f8ba55be79b6db829726e4a98.ctex::
-card_back.png::CompressedTexture2D::4231381273204381709::1758157261::1758157310::1::::<><><>0<>0<>6d070e47d3e55c15f66e5eac84b90ded<>res://.godot/imported/card_back.png-8420fb01dae0b17a162d03ee76591ee6.ctex::
-card_deck.png::CompressedTexture2D::7808868305557646484::1758157242::1758157310::1::::<><><>0<>0<>28cb1b92c02155c5e2355cc0541efd81<>res://.godot/imported/card_deck.png-8e8346cac2551d9f6e5b87a8d5e46728.ctex::
-self-modifying-code.png::CompressedTexture2D::3763782004663024237::1758103625::1758157310::1::::<><><>0<>0<>fd0c451486d1833a33f89938c7a52405<>res://.godot/imported/self-modifying-code.png-9b56b77c0a30835fb361eef1b3fdd36b.ctex::
-::res://Scenes/::1758156535
-card.tscn::PackedScene::3393988999195874413::1758156535::0::1::::<><><>0<>0<><>::uid://btvg67k2q03n2::::res://Card Faces/self-modifying-code.png<>uid://brmcm0egp50f2::::res://Scripts/Card.gd
-Card_Game.tscn::PackedScene::3622737792117195014::1758154233::0::1::::<><><>0<>0<><>::uid://c6uq4jg3jcne4::::res://Scripts/card_manager.gd<>uid://b4ywwlf7vjyrr::::res://Scripts/player_hand.gd<>uid://6da882druf4o::::res://Scenes/card_slot.tscn
-card_slot.tscn::PackedScene::2182107992380135628::1758151542::0::1::::<><><>0<>0<><>::uid://cw7w6x25kjpoe::::res://Card Faces/CardSlot.png<>uid://bekk2ccmgnvpf::::res://Scripts/card_slot.gd
-::res://Scripts/::1758155674
-Card.gd::GDScript::3604547741657597641::1758154733::0::1::::<>Node2D<><>0<>0<><>::
-card_manager.gd::GDScript::6991006818417197433::1758155674::0::1::::<>Node2D<><>0<>0<><>::
-card_slot.gd::GDScript::2688475330839013151::1758153730::0::1::::<>Node2D<><>0<>0<><>::
-player_hand.gd::GDScript::4472817863563497099::1758153642::0::1::::<>Node2D<><>0<>0<><>::
+::res://::1759466775
+icon.svg::CompressedTexture2D::3977722408636366225::1759454331::1759454331::1::::<><><>0<>0<>c6d1841608fc31f9abba34a7a272cd65<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+README.md::TextFile::-1::1759454331::0::1::::<><><>0<>0<><>::
+::res://Assets/::1759457285
+CardSlot.png::CompressedTexture2D::6384448400128311556::1759454331::1759454331::1::::<><><>0<>0<>1d276d4d07883817fb53537a7701da2b<>res://.godot/imported/CardSlot.png-e9d43e4f8ba55be79b6db829726e4a98.ctex::
+card_back.png::CompressedTexture2D::4231381273204381709::1759454331::1759454331::1::::<><><>0<>0<>6d070e47d3e55c15f66e5eac84b90ded<>res://.godot/imported/card_back.png-8420fb01dae0b17a162d03ee76591ee6.ctex::
+card_deck.png::CompressedTexture2D::7808868305557646484::1759454331::1759454331::1::::<><><>0<>0<>28cb1b92c02155c5e2355cc0541efd81<>res://.godot/imported/card_deck.png-8e8346cac2551d9f6e5b87a8d5e46728.ctex::
+::res://Assets/cards/::1759457800
+bank_job_card.png::CompressedTexture2D::1691746358847006554::1759457793::1759457800::1::::<><><>0<>0<>fdc9442bbfb048c3f7ba3e9f2a511396<>res://.godot/imported/bank_job_card.png-6e975604c1b81a2dc286969d4da1ffa2.ctex::
+direct_access_card.png::CompressedTexture2D::7171586323481454390::1759457766::1759457800::1::::<><><>0<>0<>9a0153b72752e629d0849e3818b3a905<>res://.godot/imported/direct_access_card.png-5468ab3d89a4de06605cf6dcbd26a59f.ctex::
+self_modifying_code_card.png::CompressedTexture2D::3763782004663024237::1759454331::1759457601::1::::<><><>0<>0<>093caaad4e66fe861795f074fdce643e<>res://.godot/imported/self_modifying_code_card.png-be8b6eb1bb96b6a94e0a0849772db1bc.ctex::
+::res://Scenes/::1759464529
+card.tscn::PackedScene::3393988999195874413::1759464529::0::1::::<><><>0<>0<><>::uid://brmcm0egp50f2::::res://Scripts/card.gd<>uid://btvg67k2q03n2::::res://Assets/cards/self_modifying_code_card.png
+Card_Game.tscn::PackedScene::3622737792117195014::1759454791::0::1::::<><><>0<>0<><>::uid://c6uq4jg3jcne4::::res://Scripts/card_manager.gd<>uid://b4ywwlf7vjyrr::::res://Scripts/player_hand.gd<>uid://6da882druf4o::::res://Scenes/card_slot.tscn<>uid://vs1t5km238ev::::res://Scripts/deck.gd<>uid://djiw6jvyhuvwe::::res://Assets/card_deck.png<>uid://ccs0a612ytb4p::::res://Scripts/manager.gd
+card_slot.tscn::PackedScene::2182107992380135628::1759454331::0::1::::<><><>0<>0<><>::uid://cw7w6x25kjpoe::::res://Card Faces/CardSlot.png<>uid://bekk2ccmgnvpf::::res://Scripts/card_slot.gd
+::res://Scripts/::1759457651
+card.gd::GDScript::3604547741657597641::1759454331::0::1::::<>Node2D<><>0<>0<><>::
+card_database.gd::GDScript::559214230446779008::1759457651::0::1::::<>RefCounted<><>0<>0<><>::
+card_manager.gd::GDScript::6991006818417197433::1759454331::0::1::::<>Node2D<><>0<>0<><>::
+card_slot.gd::GDScript::2688475330839013151::1759454331::0::1::::<>Node2D<><>0<>0<><>::
+deck.gd::GDScript::1512738679598870577::1759457600::0::1::::<>Node2D<><>0<>0<><>::
+manager.gd::GDScript::4951897448702851173::1759454331::0::1::::<>Node2D<><>0<>0<><>::
+player_hand.gd::GDScript::4472817863563497099::1759454331::0::1::::<>Node2D<><>0<>0<><>::

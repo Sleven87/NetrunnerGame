@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://btvg67k2q03n2"
-path="res://.godot/imported/self-modifying-code.png-9b56b77c0a30835fb361eef1b3fdd36b.ctex"
+path="res://.godot/imported/self_modifying_code_card.png-be8b6eb1bb96b6a94e0a0849772db1bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/self-modifying-code.png"
-dest_files=["res://.godot/imported/self-modifying-code.png-9b56b77c0a30835fb361eef1b3fdd36b.ctex"]
+source_file="res://Assets/cards/self_modifying_code_card.png"
+dest_files=["res://.godot/imported/self_modifying_code_card.png-be8b6eb1bb96b6a94e0a0849772db1bc.ctex"]
 
 [params]
 
